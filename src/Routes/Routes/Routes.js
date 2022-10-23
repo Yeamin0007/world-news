@@ -3,6 +3,9 @@ import Main from "../../Layouts/Main";
 import Catagory from "../../Pages/Catagory/Catagory";
 import Home from "../../Pages/Home/Home";
 import News from "../../Pages/News/News";
+import Register from "../../Shared/Register/Register";
+import Login from "../../Shared/Login/Login";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -22,8 +25,17 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/news/:id',
-                element: <News></News>,
+                element: <PrivateRoute><News></News></PrivateRoute>,
                 loader: ({params})=> fetch(`http://localhost:5000/news/${params.id}`)
+            },
+            {
+                path: '/login',
+                element: <Login></Login>,
+                
+            },
+            {
+                path: '/register',
+                element: <Register></Register>,
             }
         ]
     }
