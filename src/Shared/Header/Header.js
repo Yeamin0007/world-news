@@ -42,8 +42,8 @@ const Header = () => {
                </>
                 :
                 <>
-                <Link to='/login'>Login</Link>
-                <Link to='/register'>Register</Link>
+                <Button className='mx-2 ' action variant="outline"><Link className='text-dark' to='/login'>Login</Link></Button>
+                <Button action variant="outline"><Link className='text-dark' to='/register'>Register</Link></Button>
                 </>
               }
               
@@ -54,7 +54,7 @@ const Header = () => {
                 user?.photoURL?
                 <Image style={{height:'25px'}} roundedCircle src={user?.photoURL}></Image>
                 :
-                <FaUser></FaUser>
+                <FaUser className='text-dark'></FaUser>
               }
             </Nav.Link>
           </Nav>
